@@ -22,8 +22,9 @@ public class AuthenticationController {
     @Autowired
     AuthenticationManager authenticationManager;
 
-    @PostMapping("login")
+    @PostMapping("/login")
     public ResponseEntity<?> authenticate(@RequestBody LoginRequest dto) {
+
         UsernamePasswordAuthenticationToken usernamePasswordToken = new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword());
         Authentication authentication = authenticationManager.authenticate(usernamePasswordToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);

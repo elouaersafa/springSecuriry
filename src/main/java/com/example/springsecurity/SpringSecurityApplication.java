@@ -34,7 +34,10 @@ public class SpringSecurityApplication  {
             public void run(String... args) throws Exception {
                 User user = new User("safa", passwordEncoder.encode("safa"));
                 user.setRoleList(Arrays.asList(new Role("admin")));
+               //User user1 = new User("safa", passwordEncoder.encode("mdp"));
+               // user1.setRoleList(Arrays.asList(new Role("admin")));
                 userRepository.save(user);
+                //userRepository.save(user1);
             }
         };
     }

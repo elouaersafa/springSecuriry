@@ -34,4 +34,11 @@ public class UserController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
+    @PostMapping("/users/new")
+
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User savedUser= userService.createUser(user);
+        return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
+    }
 }

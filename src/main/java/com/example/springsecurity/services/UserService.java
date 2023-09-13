@@ -27,4 +27,8 @@ public class UserService {
         return optionalUser.get();
     }
 
+    public User createUser(User user) {
+        return userRepository.save(user);
+    }
+
 }
