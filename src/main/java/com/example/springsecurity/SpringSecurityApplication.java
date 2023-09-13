@@ -2,9 +2,7 @@ package com.example.springsecurity;
 
 import com.example.springsecurity.entities.Role;
 import com.example.springsecurity.entities.User;
-import com.example.springsecurity.repository.RoleRepository;
 import com.example.springsecurity.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +17,7 @@ public class SpringSecurityApplication  {
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
-    public SpringSecurityApplication(UserRepository userRepo) {
+    public SpringSecurityApplication(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
